@@ -1,23 +1,41 @@
 function getComputerChoice() {
-    return Math.floor(Math.random() * 3);
+    let choices = ["rock", "paper", "scissors"];
+    return choices[Math.floor(Math.random() * 3)];
 }
 function getHumanChoice() {
-    return parseInt(prompt("Enter your choice (rock = 1, paper = 2, scissors = 3):")) - 1;
+    return prompt("Enter your choice (rock, paper, scissors):");
 }
 function playRound(humanChoice, computerChoice) {
+    console.log(`${humanChoice} ${computerChoice}`)
+    humanChoice = humanChoice.toLowerCase();
     if(humanChoice === computerChoice)
-        return null; //(human won, computer won)
+        return null;
     switch(humanChoice) {
-        case 0:
-            if(computerChoice === 2)
+        case "rock":
+            if(computerChoice === "scissors")
                 return true;
-        case 1:
-            if(computerChoice === 0)
+            break;
+        case "paper":
+            if(computerChoice === "rock")
                 return true;
-        case 2:
-            if(computerChoice === 1)
+            break;
+        case "scissors":
+            if(computerChoice === "paper")
                 return true;
+            break;
         default:
             return null;
         }
+        return false;
+}
+
+let humanScore = 0;
+let computerScore = 0;
+for(let i = 0; i < 5; i++) {
+    let outcome = playRound(getHumanChoice(), getComputerChoice());
+    if(outcome === true)
+        humanScore++;
+    if(outcome === false)
+        computerScore++;
+    console.log(`human score: ${humanScore}, computer score: ${computerScore}`);
 }
