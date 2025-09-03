@@ -6,7 +6,6 @@ function getHumanChoice() {
     return prompt("Enter your choice (rock, paper, scissors):");
 }
 function playRound(humanChoice, computerChoice) {
-    console.log(`${humanChoice} ${computerChoice}`)
     humanChoice = humanChoice.toLowerCase();
     if(humanChoice === computerChoice)
         return null;
@@ -37,5 +36,4 @@ for(let i = 0; i < 5; i++) {
         humanScore++;
     if(outcome === false)
         computerScore++;
-    console.log(`human score: ${humanScore}, computer score: ${computerScore}`);
 }
