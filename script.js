@@ -2,5 +2,5 @@ function getComputerChoice() {
     return Math.floor(Math.random() * 3);
 }
 function getHumanChoice() {
-    return prompt("Enter your choice (rock, paper, scissors):");
+    return parseInt(prompt("Enter your choice (rock = 1, paper = 2, scissors = 3):"));
 }
