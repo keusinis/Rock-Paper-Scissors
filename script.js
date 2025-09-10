@@ -39,8 +39,9 @@ function showRoundResult(result, human, computer) {
 }
 
 function checkGameOver() {
-  if (playUpTo === scoreState.computer || playUpTo === scoreState.human)
-    resetGame();
+  if (playUpTo === scoreState.computer || playUpTo === scoreState.human) {
+    setTimeout(() => resetGame(), 50);
+  }
 }
 
 function resetGame() {
