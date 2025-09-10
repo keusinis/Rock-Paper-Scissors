@@ -23,7 +23,8 @@ function playRound(humanChoice, computerChoice) {
 
 function updateScore() {
   document.querySelector("#human-score span").textContent = scoreState.human;
-  document.querySelector("#computer-score span").textContent = scoreState.computer;
+  document.querySelector("#computer-score span").textContent =
+    scoreState.computer;
 }
 
 function showRoundResult(result, human, computer) {
@@ -61,7 +62,7 @@ document.querySelectorAll(".choices > button").forEach((btn) => {
     const human = btn.id;
     const computer = getComputerChoice();
     const result = playRound(btn.id, computer);
-    
+
     if (result === "win") scoreState.human++;
     if (result === "loose") scoreState.computer++;
     updateScore();
